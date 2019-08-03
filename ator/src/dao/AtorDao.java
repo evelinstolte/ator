@@ -45,5 +45,31 @@ public class AtorDao {
             JOptionPane.showMessageDialog(null, "Erro!");
         }
     }
-     
+     public static boolean alterar(Ator objeto) {
+        String sql = "UPDATE ator SET  nomereal = ?, nomeartistico = ? WHERE codigo = ?";
+        try {
+            PreparedStatement ps = conexao.Conexao.getConexao().prepareStatement(sql);
+            ps.setString(1, objeto.getNomereal()); 
+            ps.setString(2, objeto.getNomeartistico());
+            ps.setInt(3, objeto.getCodigo());
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
+    }
+       public static boolean excluir(Ator objeto) {
+        String sql = "DELETE FROM ator WHERE codigo=?";
+        try {
+            PreparedStatement ps = conexao.Conexao.getConexao().prepareStatement(sql);
+            ps.setInt(1, objeto.getCodigo());
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
+    }
+
 }

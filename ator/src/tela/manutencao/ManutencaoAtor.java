@@ -52,6 +52,11 @@ public class ManutencaoAtor extends javax.swing.JDialog {
         jLabel4.setText("nome real ");
 
         bntAlterar.setText("Alterar");
+        bntAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntAlterarActionPerformed(evt);
+            }
+        });
 
         bntAdicionar.setText("Adicionar");
         bntAdicionar.addActionListener(new java.awt.event.ActionListener() {
@@ -61,8 +66,25 @@ public class ManutencaoAtor extends javax.swing.JDialog {
         });
 
         bntExcluir.setText("Excluir");
+        bntExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntExcluirActionPerformed(evt);
+            }
+        });
 
         bntCancelar.setText("Cancelar");
+
+        jtfcodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfcodigoActionPerformed(evt);
+            }
+        });
+
+        jtfnomeartistico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfnomeartisticoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,6 +157,22 @@ public class ManutencaoAtor extends javax.swing.JDialog {
     private void bntAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAdicionarActionPerformed
 controlador.ControladorAtor.inserir(this);                 // TODO add your handling code here:
     }//GEN-LAST:event_bntAdicionarActionPerformed
+
+    private void bntAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAlterarActionPerformed
+controlador.ControladorAtor.alterar(this);        // TODO add your handling code here:
+    }//GEN-LAST:event_bntAlterarActionPerformed
+
+    private void jtfcodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfcodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfcodigoActionPerformed
+
+    private void jtfnomeartisticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfnomeartisticoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfnomeartisticoActionPerformed
+
+    private void bntExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntExcluirActionPerformed
+controlador.ControladorAtor.excluir(this);        // TODO add your handling code here:
+    }//GEN-LAST:event_bntExcluirActionPerformed
 
     /**
      * @param args the command line arguments
